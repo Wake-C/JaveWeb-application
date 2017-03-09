@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
-  <context-param>
-    <param-name>database</param-name>
-    <param-value>ProductInfo</param-value>
-  </context-param>
-  <context-param>
-    <param-name>server</param-name>
-    <param-value>192.168.0.22</param-value>
-  </context-param>
-  <servlet>
-    <display-name>test</display-name>
-    <servlet-name>HelloServlet</servlet-name>
-    <servlet-class>com.web.chapterThree.HelloServlet</servlet-class>
-    <init-param>
-      <param-name>Encoding</param-name>
-      <param-value>UTF-8</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>HelloServlet</servlet-name>
-    <url-pattern>/HelloServlet</url-pattern>
-    <url-pattern>/Hello</url-pattern>
-  </servlet-mapping>
-  <error-page>
-    <error-code>400</error-code>
-    <location>/index.jsp</location>
-  </error-page>
-  <servlet>
-    <description></description>
-    <display-name>Cookie</display-name>
-    <servlet-name>Cookie</servlet-name>
-    <servlet-class>com.web.Five.Cookie</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Cookie</servlet-name>
-    <url-pattern>/Cookie</url-pattern>
-  </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<!-- 全局初始化參數 -->
+	<context-param>
+		<param-name>database</param-name>
+		<param-value>ProductInfo</param-value>
+	</context-param>
+	<context-param>
+		<param-name>server</param-name>
+		<param-value>192.168.0.22</param-value>
+	</context-param>
+	<servlet>
+		<display-name>test</display-name>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>com.web.chapterThree.HelloServlet</servlet-class>
+		<!--servlet初始化参数 -->
+		<init-param>
+			<param-name>Encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/HelloServlet</url-pattern>
+		<url-pattern>/Hello</url-pattern>
+	</servlet-mapping>
+	<!-- 错误码返回的页面 -->
+	<error-page>
+		<error-code>400</error-code>
+		<location>/index.jsp</location>
+	</error-page>
+
+	<!-- 注册监听器 也可以用注解@WebListener <listener> <display-name>session</display-name> 
+		<listener-class>com.web.Five.SessionListener</listener-class> </listener> -->
 </web-app>
